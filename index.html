@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Roiman Romero">
     <meta name="description" content="This website is developed by Roiman Romero, the homepage of the project for the WDD 230 - Web Frontend Development course to be submitted on the course assignment portal.">
+    <meta property="og:title" content="Roiman Romero - WDD 230 - Web Frontend Development">
+    <meta property="og:description" content="This website is developed by Roiman Romero, the homepage of the project for the WDD 230 course.">
+    <meta property="og:image" content="path/to/image.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/wdd230">
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
     <title>Roiman Romero - WDD 230 - Web Frontend Development</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="styles/larger.css">
@@ -16,8 +22,10 @@
     <header>
         <img src="images/profile.jpg" alt="Roiman Romero" width="75" height="100">
         <span>Roiman Romero</span>
+        <button id="dark-mode-toggle">Dark Mode</button>
     </header>
     <nav>
+        <button id="hamburger" class="hamburger">&#9776;</button>
         <ul>
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="chamber.html">Chamber</a></li>
@@ -47,5 +55,6 @@
         <p id="lastModified"></p>
     </footer>
     <script src="scripts/getDates.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

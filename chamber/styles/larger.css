@@ -1,0 +1,59 @@
+/* Styles for larger screens */
+.nav-links {
+    justify-content: space-between;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.hero-img {
+    width: 60%;
+}
+
+.cta-button {
+    position: static;
+    margin: 20px;
+}
+
+.spotlights {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spotlight {
+    width: 30%;
+}
+
+/* Additional styles for larger screens */
+.hero-img {
+    width: 60%;
+}
+
+.cta-button {
+    padding: 20px 40px;
+    font-size: 1.2em;
+}
+
+.spotlights {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.spotlight {
+    width: 30%;
+    margin: 10px;
+}
+
+.weather-card {
+    padding: 30px;
+    font-size: 1.2em;
+}

@@ -1,4 +1,4 @@
-/* Styles for larger screens */
+@media screen and (min-width: 600px) {/* Styles for larger screens */
 .nav-links {
     justify-content: space-between;
 }
@@ -21,6 +21,7 @@
 .cta-button {
     position: static;
     margin: 20px;
+    display: 40%;
 }
 
 .spotlights {
@@ -40,6 +41,7 @@
 .cta-button {
     padding: 20px 40px;
     font-size: 1.2em;
+    display: 20%;
 }
 
 .spotlights {
@@ -56,4 +58,34 @@
 .weather-card {
     padding: 30px;
     font-size: 1.2em;
+}
+/* styles/larger.css */
+
+    .events, .weather, .spotlights {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .events, .weather {
+        width: 48%;
+        margin-right: 2%;
+    }
+
+    .weather {
+        margin-right: 0;
+    }
+
+    .spotlights {
+        width: 100%;
+    }
+
+    .spotlights .spotlight-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .spotlights .spotlight {
+        width: 32%;
+        margin-right: 0; /* Remove margin-right to ensure even spacing */
+    }
 }

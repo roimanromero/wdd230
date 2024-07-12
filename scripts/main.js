@@ -21,3 +21,14 @@ document.getElementById('dark-mode-toggle').addEventListener('click', function()
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const visitsDisplay = document.querySelector("#page-visits");
+    let visits = Number(localStorage.getItem("visits"));
+
+    if (!visits) {
+        visits = 0;
+    }
+    visits++;
+    localStorage.setItem("visits", visits);
+    visitsDisplay.textContent = visits;
+});

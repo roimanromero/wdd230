@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background: #333;
+    background: #292929;
     color: #fff;
     padding: 1rem 0;
     display: flex;
@@ -33,6 +33,37 @@ header .logo {
 
 nav {
     display: inline-block;
+}
+
+/* CSS */
+nav .nav-links a {
+  margin-left: 2rem;
+  background-color: #1b703e;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 25px;
+  text-align: center;
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+nav .nav-links :hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(8px);
+}
+
+@media (min-width: 768px) {
+  nav .nav-links  {
+    padding: 10px 30px;
+  }
 }
 
 nav .nav-links {
@@ -132,6 +163,68 @@ main {
 .weather-card .condition {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+}
+
+/*Discover page */
+/* Sidebar layout */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    font-size: 1.2em;
+}
+
+.sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar-content {
+    margin-bottom: 20px;
+}
+
+.chart-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.main-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* Visit message styling */
+.visit-message {
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 footer {

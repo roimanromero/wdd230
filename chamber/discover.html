@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barranquilla Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 600px)">
+    <link rel="icon" href="images/favicon.ico">
+    <meta property="og:title" content="Barranquilla Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://barranquillachamber.com">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Barranquilla Chamber of Commerce Logo" class="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="https://roimanromero.github.io/wdd230/chamber/index.html">Home</a></li>
+                    <li><a href="https://roimanromero.github.io/wdd230/chamber/discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+                <button class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="visit-message" id="visitMessage"></div>
+            <div class="sidebar-content">
+                <h2>Demographics</h2>
+                <p>Population: 1.2 million</p>
+                <p>Median Age: 30.7 years</p>
+                <p>Households: 340,000</p>
+                <h2>Upcoming Events</h2>
+                <ul>
+                    <li>Event 1 - July 20, 2024</li>
+                    <li>Event 2 - August 15, 2024</li>
+                    <li>Event 3 - September 10, 2024</li>
+                </ul>
+                <h2>Local Attractions</h2>
+                <p>Beautiful beaches, historic sites, and vibrant nightlife.</p>
+                <h2>Statistics</h2>
+                <div class="chart">
+                    <!-- Placeholder for chart -->
+                    <img src="images/chart.webp" alt="Chart" class="chart-image">
+                </div>
+                <h2>Calendar</h2>
+                <p id="currentDate"></p>
+                <h2>Discover the Excitement: Fun Plans in Barranquilla</h2>
+
+                <p>Barranquilla, the vibrant city known for its lively culture and warm Caribbean spirit, offers an array of exciting activities and attractions that guarantee a memorable experience for every visitor. Whether you're an adventure seeker, a culture enthusiast, or simply looking to relax and enjoy the local charm, Barranquilla has something for everyone. Here are some fun plans to make the most of your visit:</p>
+
+                <h2>Explore the Historic El Prado Neighborhood</h2>
+                <p>Take a stroll through El Prado, one of Barranquilla's most historic neighborhoods. Admire the beautiful architecture of early 20th-century mansions, lush gardens, and tree-lined streets. Don’t miss the iconic El Prado Hotel, a symbol of the city's rich history and elegance.</p>
+
+                <h2>Enjoy a Day at the Beach</h2>
+                <p>Head to Puerto Colombia, just a short drive from Barranquilla, and soak up the sun on its golden beaches. Try out water sports like windsurfing and paddleboarding, or simply relax with a refreshing cocktail as you take in the stunning coastal views.</p>
+
+                <h2>Visit the Museo del Caribe</h2>
+                <p>Immerse yourself in the rich cultural heritage of the Caribbean at the Museo del Caribe. This interactive museum offers exhibits on local history, culture, and biodiversity. It’s a perfect spot for families and curious minds to learn more about the region's vibrant past and present.</p>
+
+                <h2>Experience the Barranquilla Carnival</h2>
+                <p>If you're visiting in February, you can't miss the world-famous Barranquilla Carnival. Known as one of the largest and most colorful carnivals in the world, it features parades, music, dancing, and elaborate costumes. The energy and excitement are contagious, making it an unforgettable experience.</p>
+
+                <h2>Discover Local Cuisine</h2>
+                <p>Treat your taste buds to Barranquilla's diverse culinary scene. Visit traditional restaurants to savor local dishes like arepas, sancocho, and coconut rice. For a unique dining experience, explore the city’s food markets where you can sample fresh seafood and tropical fruits.</p>
+
+                <h2>Wander through Bocas de Ceniza</h2>
+                <p>Take a boat trip to Bocas de Ceniza, where the Magdalena River meets the Caribbean Sea. The journey itself is an adventure, offering breathtaking views and a chance to see local wildlife. It’s a great spot for photography enthusiasts and nature lovers alike.</p>
+
+                <h2>Dance the Night Away</h2>
+                <p>Barranquilla's nightlife is legendary. Visit popular clubs and bars to dance to the rhythms of salsa, merengue, and vallenato. The city’s nightlife district, Calle 84, is packed with venues where you can enjoy live music and vibrant atmospheres.</p>
+
+                <h2>Shop at the Local Markets</h2>
+                <p>Explore Barranquilla’s bustling markets, such as the Mercado Público, for a taste of local life. Here, you can find everything from handmade crafts and souvenirs to fresh produce and traditional snacks. It’s a perfect place to pick up unique gifts and immerse yourself in the local culture.</p>
+
+                <h2>Relax in Parque Suri Salcedo</h2>
+                <p>For a peaceful afternoon, visit Parque Suri Salcedo, a beautiful urban park in the heart of the city. Enjoy a leisurely walk, rent a bike, or have a picnic under the shade of the trees. The park is also a great spot for people-watching and soaking in the local atmosphere.</p>
+
+                <h2>Explore the Romantic Zona Colonial</h2>
+                <p>Take a romantic evening stroll through the Zona Colonial, Barranquilla’s historic old town. The cobblestone streets, colonial buildings, and charming plazas create a magical ambiance, especially when lit up at night. It’s an ideal spot for a quiet dinner or a romantic outing.</p>
+
+                <p>Whether you’re seeking adventure, relaxation, or cultural enrichment, Barranquilla has it all. Plan your visit and discover the endless fun and excitement this dynamic city has to offer.</p>
+
+            </div>
+        </aside>
+        <section class="main-content">
+            <h2>Local Photos</h2>
+            <div class="image-gallery">
+                <img data-src="images/photo1.webp" alt="Photo 1" class="lazy">
+                <img data-src="images/photo2.webp" alt="Photo 2" class="lazy">
+                <img data-src="images/photo3.webp" alt="Photo 3" class="lazy">
+                <img data-src="images/photo4.webp" alt="Photo 4" class="lazy">
+                <img data-src="images/photo5.webp" alt="Photo 5" class="lazy">
+                <img data-src="images/photo6.webp" alt="Photo 6" class="lazy">
+            </div>
+        </section>
+    </main>
+    
+
+    <footer>
+        <div class="container">
+            <p>Barranquilla Chamber of Commerce</p>
+            <p>10 Calle 77B, Barranquilla, Colombia</p>
+            <p><a href="mailto:info@barranquillachamber.com">info@barranquillachamber.com</a></p>
+            <p><a href="tel:+573001234567">+57 300 123-4567</a></p>
+            <p><a href="location.html">Location Map</a></p>
+            <p>&copy; 2024 Barranquilla Chamber | Rubia M. Francesco | WDD 230 Project | Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -26,40 +26,38 @@
     </header>
     <nav>
         <button id="hamburger" class="hamburger">&#9776;</button>
-        <ul id="nav-menu" class="hidden">
+        <ul>
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="https://roimanromero.github.io/wdd230/chamber/index.html">Chamber</a></li>
             <li><a href="https://roimanromero.github.io/wdd230/week01/chamber-site-plan.html">Site Plan</a></li>
-            <li><a href="https://roimanromero.github.io/wdd230/form.html">Form</a></li>
+            <li><a href="form.html">Form</a></li>
         </ul>
     </nav>
     <main>
-        <h1>Contact Us</h1>
-        <form id="contactForm" method="get" action="record.html" onsubmit="return validateForm()">
-            <div>
+        <form action="record.html" method="get" id="mainForm">
+            <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9]{8,}">
+                <input type="password" id="password" name="password" pattern="[a-zA-Z0-9]{8,}" title="Password must be at least 8 characters long and contain only alphanumeric characters" required>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="confirmPassword">Confirm Password:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <span id="passwordMessage"></span>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" title="Please enter a valid email address">
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" title="Please enter a valid email address" required>
             </div>
-            <div>
-                <label for="pageRating">Page Rating:</label>
-                <input type="range" id="pageRating" name="pageRating" min="1" max="10" step="1" oninput="document.getElementById('ratingValue').innerText = this.value;">
+            <div class="form-group">
+                <label for="rating">Page Rating:</label>
+                <input type="range" id="rating" name="rating" min="1" max="10" step="1">
                 <span id="ratingValue">5</span>
             </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
+            <button type="submit">Submit</button>
         </form>
     </main>
     <footer>
@@ -68,20 +66,6 @@
     </footer>
     <script src="scripts/getDates.js"></script>
     <script src="scripts/main.js"></script>
-    <script>
-        function validateForm() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password !== confirmPassword) {
-                alert('Passwords do not match. Please try again.');
-                document.getElementById('password').focus();
-                document.getElementById('password').value = '';
-                document.getElementById('confirmPassword').value = '';
-                return false;
-            }
-            return true;
-        }
-    </script>
+    <script src="scripts/form.js"></script>
 </body>
 </html>

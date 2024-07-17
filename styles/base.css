@@ -201,3 +201,29 @@ footer.dark-mode {
         width: 100%;
     }
 }
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#passwordMessage {
+    color: red;
+    font-size: 0.9em;
+}
+
+#ratingValue {
+    font-weight: bold;
+    margin-left: 10px;
+}

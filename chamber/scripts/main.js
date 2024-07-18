@@ -96,3 +96,7 @@ document.getElementById('currentDate').textContent = new Date().toLocaleDateStri
 document.addEventListener("DOMContentLoaded", function() {
     displayVisitMessage();
 });
+document.addEventListener('DOMContentLoaded', (event) => {
+    const timestamp = new Date().toISOString();
+    document.getElementById('timestamp').value = timestamp;
+});

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Chamber - Barranquilla Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 600px)">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Barranquilla Chamber of Commerce Logo" class="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="https://roimanromero.github.io/wdd230/chamber/index.html">Home</a></li>
+                    <li><a href="https://roimanromero.github.io/wdd230/chamber/discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="https://roimanromero.github.io/wdd230/chamber/join.html">Join</a></li>
+                </ul>
+                <button class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <form action="thankyou.html" method="get" id="joinForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title/Position</label>
+                    <input type="text" id="title" name="title" pattern="[A-Za-z\s-]{7,}" title="Only letters, hyphens, and spaces are allowed. Minimum 7 characters.">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="organization">Organization Name</label>
+                    <input type="text" id="organization" name="organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="membership">Membership Level</label>
+                    <select id="membership" name="membership">
+                        <option value="NP">NP Membership</option>
+                        <option value="Bronze">Bronze Membership</option>
+                        <option value="Silver">Silver Membership</option>
+                        <option value="Gold">Gold Membership</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Business/Organization Description</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+                <input type="hidden" id="timestamp" name="timestamp">
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+            <aside class="membership-benefits">
+                <h2>Membership Benefits</h2>
+                <ul>
+                    <li>NP Membership: No fee, suitable for non-profit organizations.</li>
+                    <li>Bronze Membership: Basic benefits including event discounts.</li>
+                    <li>Silver Membership: Includes training sessions and advertising.</li>
+                    <li>Gold Membership: All benefits including spotlight positions on the home page.</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Barranquilla Chamber of Commerce</p>
+            <p>10 Calle 77B, Barranquilla, Colombia</p>
+            <p><a href="mailto:info@barranquillachamber.com">info@barranquillachamber.com</a></p>
+            <p><a href="tel:+573001234567">+57 300 123-4567</a></p>
+            <p><a href="location.html">Location Map</a></p>
+            <p>&copy; 2024 Barranquilla Chamber | Rubia M. Francesco | WDD 230 Project | Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/join.js"></script>
+</body>
+</html>

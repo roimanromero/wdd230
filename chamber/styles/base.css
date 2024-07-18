@@ -243,3 +243,68 @@ footer a {
     text-decoration: none;
 }
 
+/*Join page */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.form-container form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.membership-benefits {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.membership-benefits h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.form-group button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #276528;
+}
+
+/* Larger screen adjustments */
+@media (min-width: 600px) {
+    .form-container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .membership-benefits {
+        grid-column: 2 / 3;
+    }
+}

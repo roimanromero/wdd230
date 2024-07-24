@@ -36,24 +36,22 @@
     <main>
         <h1>WDD 230: Web Frontend Development</h1>
         <div class="hero">
-        <img src="images/temple.webp" alt="temple" class="responsive">
-        <div class="herolabel">
-			<p>Yido Guam Temple</p>
-		</div>
+            <img src="images/temple.webp" alt="temple" class="responsive">
+            <div class="herolabel">
+                <p>Yido Guam Temple</p>
+            </div>
         </div>
         <section class="card learning-activities">
             <h2>Learning Activities</h2>
-            <ul>
-                <li><a href="#">Layout</a></li>
-                <li><a href="#">Media Query</a></li>
-                <li><a href="#">JS Pen</a></li>
-            </ul>
+            <div id="links-container">
+                <!-- Links will be dynamically inserted here -->
+            </div>
         </section>
         <section class="card">
-            <h2>Information</h2>
-            <p>Toloria, Madagascar</p>
-            <p>76°F - Sunshine</p>
-            <p>Page Visits: <span id="page-visits">0</span></p>
+            <h2>Current Weather</h2>
+            <p id="temperature">Temperature: <span id="temp"></span>°C</p>
+            <p id="description">Description: <span id="desc"></span></p>
+            <img id="weather-icon" src="" alt="Weather Icon">
         </section>
         <section class="card">
             <h2>Location</h2>
@@ -66,5 +64,7 @@
     </footer>
     <script src="scripts/getDates.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/links.js"></script>
+    <script src="scripts/weather.js"></script>
 </body>
 </html>

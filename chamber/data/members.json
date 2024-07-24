@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Alpha Innovations",
+        "address": "101 Innovation Blvd, Barranquilla",
+        "phone": "+57 300 111-1111",
+        "website": "https://alphainnovations.com",
+        "image": "images/alpha-innovations.jpg",
+        "membershipLevel": "Gold",
+        "description": "Leading provider of cutting-edge tech solutions with a focus on AI and machine learning."
+    },
+    {
+        "name": "Beta Solutions",
+        "address": "202 Solution St, Barranquilla",
+        "phone": "+57 300 222-2222",
+        "website": "https://betasolutions.com",
+        "image": "images/beta-solutions.jpg",
+        "membershipLevel": "Silver",
+        "description": "Expert in providing efficient business process solutions and IT consultancy."
+    },
+    {
+        "name": "Gamma Enterprises",
+        "address": "303 Enterprise Ave, Barranquilla",
+        "phone": "+57 300 333-3333",
+        "website": "https://gammaenterprises.com",
+        "image": "images/gamma-enterprises.jpg",
+        "membershipLevel": "Bronze",
+        "description": "Specializing in industrial machinery and automation systems for various industries."
+    },
+    {
+        "name": "Delta Dynamics",
+        "address": "404 Dynamic Dr, Barranquilla",
+        "phone": "+57 300 444-4444",
+        "website": "https://deltadynamics.com",
+        "image": "images/delta-dynamics.jpg",
+        "membershipLevel": "Gold",
+        "description": "Pioneers in dynamic engineering solutions and consulting for complex projects."
+    },
+    {
+        "name": "Epsilon Group",
+        "address": "505 Epsilon Rd, Barranquilla",
+        "phone": "+57 300 555-5555",
+        "website": "https://epsilongroup.com",
+        "image": "images/epsilon-group.jpg",
+        "membershipLevel": "Silver",
+        "description": "Offering top-notch financial services and investment solutions with a global outlook."
+    },
+    {
+        "name": "Zeta Labs",
+        "address": "606 Lab Lane, Barranquilla",
+        "phone": "+57 300 666-6666",
+        "website": "https://zetalabs.com",
+        "image": "images/zeta-labs.jpg",
+        "membershipLevel": "Bronze",
+        "description": "Innovative laboratory providing research and development services for biotech companies."
+    },
+    {
+        "name": "Eta Technologies",
+        "address": "707 Tech Terrace, Barranquilla",
+        "phone": "+57 300 777-7777",
+        "website": "https://etatech.com",
+        "image": "images/eta-technologies.jpg",
+        "membershipLevel": "Gold",
+        "description": "Cutting-edge technology firm specializing in cybersecurity and digital transformation."
+    }
+]

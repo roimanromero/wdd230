@@ -9,7 +9,7 @@ async function getLinks() {
 
 function displayLinks(weeks) {
     const container = document.getElementById('links-container');
-    container.innerHTML = ''; // Clear any existing content
+    container.innerHTML = ''; 
 
     weeks.forEach(week => {
         const weekElement = document.createElement('div');

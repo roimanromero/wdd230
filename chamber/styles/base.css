@@ -308,3 +308,48 @@ footer a {
         grid-column: 2 / 3;
     }
 }
+
+/* Common styles for member cards */
+.member-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.member-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Grid view */
+.member-card.grid-view {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    vertical-align: top;
+}
+
+.member-card.grid-view img {
+    width: 100%;
+}
+
+/* List view */
+.member-card.list-view {
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.member-card.list-view img {
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-right: 1rem;
+}
+
+.member-info {
+    overflow: hidden;
+}

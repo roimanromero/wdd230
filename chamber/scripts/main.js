@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(members => {
             const spotlightsContainer = document.querySelector('#spotlights .spotlight-container');
             const filteredMembers = members.filter(member => member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver');
-            const randomMembers = getRandomElements(filteredMembers, 2);
+            const randomMembers = getRandomElements(filteredMembers, 3);
             randomMembers.forEach(member => {
                 const memberDiv = document.createElement('div');
                 memberDiv.className = 'spotlight';

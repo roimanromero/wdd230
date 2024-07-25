@@ -353,3 +353,32 @@ footer a {
 .member-info {
     overflow: hidden;
 }
+/* Add this to your existing CSS */
+.forecast-container {
+    margin-top: 1rem;
+}
+
+.forecast-day {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.banner {
+    background: #ffcc00;
+    color: #333;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.banner button {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

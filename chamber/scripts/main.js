@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Update the last modified date
     const lastModified = new Date(document.lastModified);
     document.getElementById('lastModified').textContent = lastModified.toLocaleString();
 
@@ -8,12 +9,93 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('open');
     });
+
+    // Fetch and display current weather data
+    const apiKey = '5752a4053b45dfc8b4e1fe09df8c1ec5';
+    const city = 'Barranquilla';
+    const weatherCard = document.getElementById('weather-card');
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            weatherCard.querySelector('.temp').textContent = `${data.main.temp}°C`;
+            weatherCard.querySelector('.condition').textContent = data.weather[0].description;
+            weatherCard.querySelector('.humidity').textContent = `Humidity: ${data.main.humidity}%`;
+        })
+        .catch(error => console.error('Error fetching weather data:', error));
+
+    // Fetch and display forecast data
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            const forecastContainer = document.createElement('div');
+            forecastContainer.className = 'forecast-container';
+            
+            const dailyData = data.list.filter((_, index) => index % 8 === 0).slice(1, 4);
+            dailyData.forEach(day => {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'forecast-day';
+                const date = new Date(day.dt_txt).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+                dayDiv.innerHTML = `
+                    <p>${date}</p>
+                    <p>Temp: ${day.main.temp}°C</p>
+                    <p>${day.weather[0].description}</p>
+                `;
+                forecastContainer.appendChild(dayDiv);
+            });
+            weatherCard.appendChild(forecastContainer);
+        })
+        .catch(error => console.error('Error fetching forecast data:', error));
+
+    // Load and display spotlights from JSON
+    fetch('data/members.json')
+        .then(response => response.json())
+        .then(members => {
+            const spotlightsContainer = document.querySelector('#spotlights .spotlight-container');
+            const filteredMembers = members.filter(member => member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver');
+            const randomMembers = getRandomElements(filteredMembers, 2);
+            randomMembers.forEach(member => {
+                const memberDiv = document.createElement('div');
+                memberDiv.className = 'spotlight';
+                memberDiv.innerHTML = `
+                    <h3>${member.name}</h3>
+                    <p>${member.description}</p>
+                    <a href="mailto:${member.email}">${member.email}</a>
+                    <a href="tel:${member.phone}">${member.phone}</a>
+                    <a href="${member.website}" target="_blank">Website</a>
+                `;
+                spotlightsContainer.appendChild(memberDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching member data:', error));
+
+    // Get random elements from array
+    function getRandomElements(arr, count) {
+        const shuffled = arr.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
+
+    // Display banner on specific days
+    const daysToShowBanner = [1, 2, 3]; // Monday (1) to Wednesday (3)
+    const currentDay = new Date().getDay();
+    if (daysToShowBanner.includes(currentDay)) {
+        const banner = document.createElement('div');
+        banner.className = 'banner';
+        banner.innerHTML = `
+            <p>Join us for the Chamber of Commerce meet and greet on Wednesday at 7:00 p.m.</p>
+            <button id="close-banner">❌</button>
+        `;
+        document.body.insertBefore(banner, document.body.firstChild);
+        document.getElementById('close-banner').addEventListener('click', () => {
+            banner.style.display = 'none';
+        });
+    }
 });
 
 // Lazy loading images
 document.addEventListener("DOMContentLoaded", function() {
     let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    
+
     if ("IntersectionObserver" in window) {
         let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
@@ -63,76 +145,5 @@ document.addEventListener("DOMContentLoaded", function() {
         document.addEventListener("scroll", lazyLoad);
         window.addEventListener("resize", lazyLoad);
         window.addEventListener("orientationchange", lazyLoad);
-    }
-});
-
-// Display visit message
-function displayVisitMessage() {
-    const visitMessage = document.getElementById('visitMessage');
-    const lastVisit = localStorage.getItem('lastVisit');
-    const currentVisit = Date.now();
-    
-    if (!lastVisit) {
-        visitMessage.textContent = 'Welcome! Let us know if you have any questions.';
-    } else {
-        const timeDiff = currentVisit - lastVisit;
-        const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        
-        if (daysDiff < 1) {
-            visitMessage.textContent = 'Back so soon! Awesome!';
-        } else if (daysDiff === 1) {
-            visitMessage.textContent = 'You last visited 1 day ago.';
-        } else {
-            visitMessage.textContent = `You last visited ${daysDiff} days ago.`;
-        }
-    }
-    
-    localStorage.setItem('lastVisit', currentVisit);
-}
-
-// Set current date in sidebar
-document.getElementById('currentDate').textContent = new Date().toLocaleDateString();
-
-document.addEventListener("DOMContentLoaded", function() {
-    displayVisitMessage();
-});
-document.addEventListener('DOMContentLoaded', (event) => {
-    const timestamp = new Date().toISOString();
-    document.getElementById('timestamp').value = timestamp;
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const directoryList = document.getElementById('directory-list');
-    const gridViewButton = document.getElementById('grid-view');
-    const listViewButton = document.getElementById('list-view');
-    
-    // Fetch members data
-    fetch('data/members.json')
-        .then(response => response.json())
-        .then(members => {
-            displayMembers(members, 'grid');
-            
-            gridViewButton.addEventListener('click', () => displayMembers(members, 'grid'));
-            listViewButton.addEventListener('click', () => displayMembers(members, 'list'));
-        });
-
-    function displayMembers(members, view) {
-        directoryList.innerHTML = '';
-        const isGrid = view === 'grid';
-
-        members.forEach(member => {
-            const memberCard = document.createElement('div');
-            memberCard.className = isGrid ? 'member-card grid-view' : 'member-card list-view';
-            
-            memberCard.innerHTML = `
-                <img src="${member.image}" alt="${member.name}" />
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-                <p>${member.description}</p>
-            `;
-            
-            directoryList.appendChild(memberCard);
-        });
     }
 });
